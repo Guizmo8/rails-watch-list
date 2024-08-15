@@ -1,0 +1,10 @@
+
+<div class="mx-auto p-2 m-5" style="width: 400px;">
+<h2>Create a new list</h2>
+<%= simple_form_for @list do |f| %>
+  <%= f.input :name, class:"form-label" %>
+  <%= f.submit "Submit", class:"btn btn-primary" %>
+<% end %>
+</div>
+
+<p> <%= link_to "Back to my list", lists_path  %></p>
