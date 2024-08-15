@@ -3,7 +3,7 @@
 <h2>Create a new bookmark</h2>
 <%= simple_form_for [@list, @bookmark] do |f| %>
   <%= f.input :comment, class:"form-label" %>
-  <%= f.association :movie, collection: Movie.title, prompt: "Choose a Movie" %>
+  <%= f.association :movie, prompt: "Choose a Movie" %>
   <%= f.submit "Submit", class:"btn btn-primary" %>
 <% end %>
 </div>

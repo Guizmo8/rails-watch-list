@@ -1,12 +1,13 @@
 <h1>List details</h1>
 
 <div>
-<% @list.movies.each do |movie| %>
+<% @list.bookmarks.each do |bookmark| %>
   <div>
-  <%= image_tag movie.poster_url, width: 200 %>
-  <li>Title:<%= movie.title %></li>
-  <li>Overview:<%= movie.overview %></li>
-  <li>Rating:<%= movie.rating %>/5</li>
+  <%= image_tag bookmark.movie.poster_url, width: 200 %>
+  <li>Title:<%= bookmark.movie.title %></li>
+  <li>Overview:<%= bookmark.movie.overview %></li>
+  <li>Rating:<%= bookmark.movie.rating %>/5</li>
+  <p> <%= link_to "Remove", list_bookmark_path(@list, bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
 <% end %>
   </div>
   <p> <%= link_to "+ Add a bookmark", new_list_bookmark_path(@list) %> </p>
